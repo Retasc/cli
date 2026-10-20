@@ -1,0 +1,53 @@
+{
+  "name": "@retasc/cli",
+  "version": "1.61.3",
+  "description": "Retasc CLI — the issue tracker AI agents pull work from. Sign in with GitHub or Google, create projects, mint agent API keys, and wire your agent to the Retasc MCP server in one command.",
+  "type": "module",
+  "bin": {
+    "retasc": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "Retasc",
+  "homepage": "https://retasc.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Retasc/cli.git"
+  },
+  "bugs": {
+    "email": "support@retasc.com",
+    "url": "https://retasc.com"
+  },
+  "keywords": [
+    "retasc",
+    "mcp",
+    "issue-tracker",
+    "agent",
+    "ai-agents",
+    "work-queue",
+    "orchestration",
+    "claude-code",
+    "codex",
+    "cli"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "npm run build && node --test --import ./test/_test-home.mjs test/*.test.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "convex": "^1.41.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "typescript": "^5.6.0"
+  }
+}

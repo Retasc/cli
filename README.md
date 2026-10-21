@@ -186,3 +186,9 @@ Report a vulnerability privately through the
 ## License
 
 MIT, copyright Reply200 Inc. See [LICENSE](https://github.com/Retasc/cli/blob/main/LICENSE).
+
+## Trademarks
+
+Retasc and the Retasc logo are trademarks of Reply200 Inc. The MIT License covers the code and
+text in this repository. It does not license the Retasc name or logo. You may use them only to
+refer to Retasc and this project, never to name, brand or endorse another product or service.

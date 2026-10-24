@@ -1,6 +1,6 @@
 {
   "name": "@retasc/cli",
-  "version": "1.61.3",
+  "version": "1.61.4",
   "description": "Retasc CLI — the issue tracker AI agents pull work from. Sign in with GitHub or Google, create projects, mint agent API keys, and wire your agent to the Retasc MCP server in one command.",
   "type": "module",
   "bin": {

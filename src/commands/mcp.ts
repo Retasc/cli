@@ -341,7 +341,7 @@ export function installMcp(opts: { url: string; key: string; scope?: McpScope; w
       "\nThe watchdog keeps claims alive automatically — it renews every claim it saw this session make, about every 10 minutes, so your agent needs no per-claim heartbeats. Long builds and test runs do NOT free a claim by themselves, and neither does a /clear: in Claude Code the new conversation is told which claims the window still holds, so it can carry on or release them.",
     );
     console.log(
-      "Two things it does not cover, both safe (they fall back to the normal 30-minute lease timeout): if the proxy stops, renewal stops; and a claim made elsewhere — another terminal, direct HTTP MCP, or a previous proxy before a restart — is renewed by nobody. Heartbeat or checkpoint those yourself.",
+      "Two things it does not cover, both safe (they fall back to the normal lease timeout: 30 minutes, or 2 hours for a claim made with no watchdog): if the proxy stops, renewal stops; and a claim made elsewhere — another terminal, direct HTTP MCP, or a previous proxy before a restart — is renewed by nobody. Heartbeat or checkpoint those yourself.",
     );
     return;
   }

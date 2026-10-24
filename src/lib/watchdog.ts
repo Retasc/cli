@@ -52,7 +52,7 @@ export function applyObservation(leases: Leases, o: Observation): void {
   //
   // RTSC-741: but ONLY if the call actually succeeded. These branches read the REQUEST
   // shape, so a REJECTED write used to drop the lease of an issue the agent still holds
-  // server-side. Nothing then renews it, it runs out the bare 30-minute TTL, and the
+  // server-side. Nothing then renews it, it runs out its bare TTL, and the
   // reclaimer hands the issue to someone else while the agent is still working on it.
   // `shouldReapOnClose` below already applies exactly this check for the same reason.
   //
@@ -245,7 +245,7 @@ export function isUnauthorized(result: unknown): boolean {
 
 /**
  * The renewal-visibility warning (RTSC-646): this session is touching a lease the
- * watchdog is NOT renewing, so it runs on the bare 30-minute TTL.
+ * watchdog is NOT renewing, so it runs on its bare TTL.
  *
  * The lease map is in-memory and built ONLY from claim traffic this process saw, so
  * a claim made in another terminal, over direct HTTP MCP, or by a previous proxy
@@ -275,7 +275,8 @@ export function untrackedLeaseWarning(o: Observation, leases: Leases): string | 
 
   return (
     `lease for ${id} is NOT tracked by this proxy — nothing is renewing it, so it ` +
-    `runs on the bare 30-minute TTL and the reclaimer will take it mid-work. ` +
+    `runs on its bare TTL (30 minutes, or 2 hours if it was claimed with no watchdog) and ` +
+    `the reclaimer will take it mid-work. ` +
     `This happens when the claim was made in another terminal, over direct HTTP MCP, ` +
     `or by a previous proxy before a restart. Heartbeat or checkpoint it yourself ` +
     `(checkpoint is better — it renews AND leaves the handoff note), or release it ` +

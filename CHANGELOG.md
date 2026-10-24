@@ -6,6 +6,18 @@ release commits and the issues they reference.
 
 Dates are the npm publish date. Each entry names the RTSC issue behind it.
 
+## 1.61.4 (2026-10-24)
+
+- **RTSC-1267** — **the CLI states the lease you actually have.** A claim made without the
+  watchdog, from a plugin, a cloud session or a pasted URL, now gets a 2-hour lease on the
+  server instead of 30 minutes. A claim made through `retasc mcp-proxy` keeps 30 minutes,
+  renewed every 10 minutes as before. The proxy's warnings and the watchdog help now say
+  which of the two applies, where they used to say 30 minutes for every claim. The CLI
+  works exactly as in 1.61.3.
+- **RTSC-1250** — **the README says the Retasc name and logo are trademarks.** The MIT
+  license covers the CLI's code and text. The name and logo belong to Reply200 Inc. and may
+  be used only to refer to Retasc.
+
 ## 1.61.3 (2026-10-20)
 
 - **RTSC-1205** — **the CLI's source is public.** npm's Repository link now opens
